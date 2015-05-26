@@ -114,13 +114,7 @@ int main()
 	// Create an output file
 	ofstream outfile;
 	outfile.open( "results.txt" ); 
-/*************************************************
-*	CONSTRUCTION AREA A START
-*
-*
-*
-*
-***********************************************/
+
 	// Create a connection to output channel
 	zmq::context_t context(1); 
 
@@ -132,18 +126,9 @@ int main()
 	zmq::socket_t sink(context, ZMQ_PUSH);
 	sink.connect("tcp://127.0.0.1:5558");
 	zmq::message_t message(35);			 //<-- Message size
-	memcpy(message.data(), "0", 1);		 //<-- put 0 into a message
-	sink.send(message);					 //<-- send message				
+	memcpy(message.data(), "0", 1);			 //<-- put 0 into a message
+	sink.send(message);				 //<-- send message				
 
-
-
-/*************************************************
-*	CONSTRUCTION AREA A END
-*
-*
-*
-*
-***********************************************/
 	
 
 	// Iterate over every reply within replies_packet container 
@@ -158,13 +143,6 @@ int main()
 			cout <<"got one.."<<endl;
 			ARP* arp_layer = reply_packet->GetLayer<ARP>();					    //<-- Get ARP layer of reply packet
 
-/*************************************************
-*	CONSTRUCTION AREA B START
-*
-*
-*
-*
-***********************************************/
 			// pass  to message queue 
 			message.rebuild(35);
 			sprintf ((char *) message.data(), "%s,%s" , arp_layer->GetSenderMAC().c_str(), arp_layer->GetSenderIP().c_str());	
@@ -172,17 +150,7 @@ int main()
 
 			sender.send(message);				
 
-
-
-/*************************************************
-*	CONSTRUCTION AREA B END
-*
-*
-*
-*
-***********************************************/
-	
-
+			/* output to console */ 
 			cout << "[@] Host: " << arp_layer->GetSenderIP() << " is up with MAC Address: "     //<-- Print source IP 
 				 << arp_layer->GetSenderMAC() << endl;  
 			outfile << "[@] Host: " << arp_layer->GetSenderIP() << " is up with MAC Address: "  //<-- Write to file
@@ -211,7 +179,6 @@ int main()
 		delete (*it_pck); 
 	}	
 	
-	cout <<"finished" << endl;
 	return 0; 
 }
 	
