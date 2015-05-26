@@ -1,0 +1,17 @@
+/*
+*	query.cpp
+*	
+*	script performs SNMPWALK of a target device, which feeds the results into a
+*	ZMQ Worker script ( query_processors.cpp ) who places results in both
+*	local database ( tcp://127.0.0.1:3306 )and 
+*	remote database( tcp://10.0.13.47:3306 ). 
+*
+*	
+*
+*/
+
+
+#include <net-snmp/net-snmp-config.h>
+#include <net-snmp/net-snmp-includes.h>
+
+
