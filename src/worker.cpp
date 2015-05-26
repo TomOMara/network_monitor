@@ -50,23 +50,6 @@ int main()
 		// Show contents of message
 		std::cout << "Data value:" << data << std::endl;
 
-/*************************************************
-*	CONSTRUCTION AREA A END
-*
-*		Insert data into database
-*
-*
-***********************************************/
-		
-
-/*************************************************
-*	CONSTRUCTION AREA B START
-*
-*
-*
-*
-***********************************************/		
-
 
 		//	Send success/failure results to sink
 		message.rebuild();
