@@ -1,0 +1,41 @@
+{
+	"nodes": [
+		{"id": "1", "label": "Node 1", "group": "router", "x":"0"},
+		{"id": "2", "label": "Node 2", "group": "host"},
+		{"id": "3", "label": "Node 3", "group": "host" },
+		{"id": "4", "label": "Node 4", "group": "host" },
+		{"id": "5", "label": "Node 5", "group": "host" },
+		{"id": "6", "label": "Node 6", "group": "host" },
+		{"id": "7", "label": "Node 7", "group": "host" },
+		{"id": "8", "label": "Node 8", "group": "host" },
+		{"id": "9", "label": "Node 9", "group": "host" },
+		{"id": "10", "label": "Node 10", "group": "host" },
+		{"id": "11", "label": "Node 11", "group": "host" },
+		{"id": "12", "label": "Node 12", "group": "host" },
+		{
+			 "id": "13",
+			 "label": "Node 13",
+			 "group": "host",
+			 "title":"<p>\tSTATISTICS\t</p><br><br><br>" 
+		}
+		
+	],
+	
+	"edges" : [
+			{"from":"1" , "to": "2"},
+			{"from":"1" , "to": "3"},
+			{"from":"1" , "to": "4"},
+			{"from":"1" , "to": "5"},
+			{"from":"1" , "to": "6", "color":"red"},
+			{"from":"1" , "to": "7"},
+			{"from":"1" , "to": "8"},
+			{"from":"1" , "to": "9"},
+			{"from":"1" , "to": "10"},
+			{"from":"1" , "to": "11"},
+			{"from":"1" , "to": "12"},
+			{"from":"1" , "to": "13"}
+			
+	]
+}
+
+
